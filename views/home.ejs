@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <table class="table table-dark table-striped">
+      
+            <thead>
+              <tr>
+                <th scope="col">TRain name</th>
+                <th scope="col">train no</th>
+                <th scope="col">departure time</th>
+                <th scope="col">price ac</th>
+                <th scope="col">price non ac</th>
+                <th scope="col">seat ac</th>
+                <th scope="col">seat non ac</th>
+                <th scope="col">delayed time</th>
+              </tr>
+            </thead>
+
+            <tbody>
+                <% if(data.length >=0){%>
+                    <% data.forEach(data => {%>
+              <tr>
+                
+                <td><%= data.tname %></td>
+                <td><%= data.tno %></td>
+                <td><%= data.dtime %></td>
+                <td><%= data.price[1] %></td>
+                <td><%= data.price[0] %></td>
+                <td><%= data.seatavailable[1] %></td>
+                <td><%= data.seatavailable[0] %></td>
+                <td><%= data.delayedt %></td>
+                <td>          <a href='http://localhost:3000/employes/delete/<%= data._id %>'class="btn btn-primary">delete</a>
+                    <a href="http://localhost:3010/rail/<%= data._id %>" class="btn btn-primary">update</a></td>
+          
+                
+
+              </tr>
+             <%})} %>
+            </tbody>
+         
+      </table>
+</body>
+</html>
